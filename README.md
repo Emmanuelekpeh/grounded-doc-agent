@@ -65,6 +65,19 @@ python -m paperworld eval ijepa questions_ijepa.txt
 (`questions_ijepa.txt`) deliberately includes off-topic and not-in-the-paper questions — the correct behaviour there
 is NOT SUPPORTED, and that is what the eval checks.
 
+**First live run — 18 Nov 2026, local `qwen2.5:7b`, BM25-only retrieval, 10 questions:**
+
+| Metric | Result |
+|---|---|
+| Quotes verified against source | **10 / 10 (100%)** |
+| Answered with a supported claim | 6 / 10 |
+| Declared NOT SUPPORTED | 4 / 10 |
+| Answers behaviourally wrong | **2 / 10** |
+
+Every quote was real. Two answers were still wrong — one answered a method question from an appendix about a different
+objective, and one refused a question the paper actually answers. **Full failure analysis, evidence and fix order:
+[RESULTS.md](RESULTS.md).**
+
 ## Status — Phase 0
 
 Working: ingest, outline, hybrid retrieval, grounded answers with quote verification, pause-and-ask REPL, eval harness,
@@ -73,9 +86,10 @@ and an offline test suite that uses a synthetic PDF and a fake LLM (so the tests
 
 Not done yet, and stated rather than hidden:
 
-- **The live eval has not been run against a real model in this repository.** The Anthropic path and embedding model
-  were not exercised in the build environment; tests cover the offline pipeline only. Results table lands after the
-  first real run.
+- **Hybrid retrieval is unexercised.** The live run above used BM25 only, because `sentence-transformers` was not
+  installed. The embedding + rank-fusion path has never been run end to end.
+- **No frontier-model run.** All published numbers are from a local 7B model on CPU; the Anthropic path is implemented
+  but has not been measured here.
 - Equations are detected, not parsed (PDF math text is fragmented). Figures are captured as images; contents are not read.
 - Heading detection is heuristic; appendix subsections like `A.1` are not recognised.
 - Two-column reading order depends on PDF stream order — usually right for LaTeX, not guaranteed.
@@ -101,10 +115,12 @@ See `Paper World An Interactive Environment for Learning Dense Technical Papers.
 
 ## Phase 0 acceptance checklist
 
-- [ ] `outline` shows the real section structure of the target paper.
-- [ ] `eval` on the question set: check `verified_rate` and read `review.md`.
-- [ ] Off-topic and not-in-the-paper questions return NOT SUPPORTED rather than an answer.
-- [ ] A vague question after `:at 3` / `:concept ...` retrieves the right passage.
+- [x] `outline` shows the real section structure of the target paper. *(verified on I-JEPA: 10 numbered sections +
+  appendices, correct page ranges)*
+- [x] `eval` on the question set: `verified_rate` recorded and `review.md` read. *(see [RESULTS.md](RESULTS.md))*
+- [x] Off-topic and not-in-the-paper questions return NOT SUPPORTED rather than an answer. *(2 of 4 refusals correct;
+  one false refusal found and documented)*
+- [ ] A vague question after `:at 3` / `:concept ...` retrieves the right passage. *(not yet tested)*
 
 ## Next (Phase 1)
 

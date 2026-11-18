@@ -1,0 +1,92 @@
+{
+ "summary": {
+  "questions": 10,
+  "quotes": 10,
+  "verified": 10,
+  "verified_rate": 1.0,
+  "answered_not_supported": 4,
+  "retrieval": "BM25 only"
+ },
+ "results": [
+  {
+   "q": "What problem with existing self-supervised methods does the paper say it addresses?",
+   "supported": true,
+   "quotes": 1,
+   "verified": 1,
+   "rate": 1.0,
+   "unverified_segments": 0
+  },
+  {
+   "q": "What is the predictor and what does it take as input?",
+   "supported": true,
+   "quotes": 1,
+   "verified": 1,
+   "rate": 1.0,
+   "unverified_segments": 0
+  },
+  {
+   "q": "What does the paper say about how the target encoder is updated?",
+   "supported": true,
+   "quotes": 1,
+   "verified": 1,
+   "rate": 1.0,
+   "unverified_segments": 0
+  },
+  {
+   "q": "What is the training objective?",
+   "supported": false,
+   "quotes": 1,
+   "verified": 1,
+   "rate": 1.0,
+   "unverified_segments": 0
+  },
+  {
+   "q": "How are context and target blocks chosen?",
+   "supported": true,
+   "quotes": 2,
+   "verified": 2,
+   "rate": 1.0,
+   "unverified_segments": 0
+  },
+  {
+   "q": "What does the paper claim about predicting in representation space versus pixel space?",
+   "supported": true,
+   "quotes": 2,
+   "verified": 2,
+   "rate": 1.0,
+   "unverified_segments": 0
+  },
+  {
+   "q": "What ablations does the paper report?",
+   "supported": true,
+   "quotes": 2,
+   "verified": 2,
+   "rate": 1.0,
+   "unverified_segments": 0
+  },
+  {
+   "q": "Does the paper say anything about video?",
+   "supported": false,
+   "quotes": 0,
+   "verified": 0,
+   "rate": null,
+   "unverified_segments": 0
+  },
+  {
+   "q": "What GPU does the paper train on and for how many hours?",
+   "supported": false,
+   "quotes": 0,
+   "verified": 0,
+   "rate": null,
+   "unverified_segments": 0
+  },
+  {
+   "q": "Who is the senior author's favorite color?",
+   "supported": false,
+   "quotes": 0,
+   "verified": 0,
+   "rate": null,
+   "unverified_segments": 0
+  }
+ ]
+}
