@@ -1,0 +1,16 @@
+# generated artifacts from local runs
+store/
+
+# papers are not redistributed in this repository
+*.pdf
+
+# python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+.env
+
+# personal scratch notes
+ChatGPT-Yann LeCun Papers Summary-*.md

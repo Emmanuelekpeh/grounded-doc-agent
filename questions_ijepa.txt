@@ -1,0 +1,12 @@
+# One question per line. Lines starting with # are ignored.
+# These test retrieval and citation behavior; they do not encode answer keys.
+What problem with existing self-supervised methods does the paper say it addresses?
+What is the predictor and what does it take as input?
+What does the paper say about how the target encoder is updated?
+What is the training objective?
+How are context and target blocks chosen?
+What does the paper claim about predicting in representation space versus pixel space?
+What ablations does the paper report?
+Does the paper say anything about video?
+What GPU does the paper train on and for how many hours?
+Who is the senior author's favorite color?
