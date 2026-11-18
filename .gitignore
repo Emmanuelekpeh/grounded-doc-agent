@@ -14,3 +14,6 @@ venv/
 
 # personal scratch notes
 ChatGPT-Yann LeCun Papers Summary-*.md
+
+# eval transcripts are noise; keep the report and review instead
+*.log
